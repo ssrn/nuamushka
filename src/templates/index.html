@@ -1,0 +1,74 @@
+---
+title: Nyamushka
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<section class="products">
+    <h2 class="products__title">Ты сегодня покормил кота?</h2>
+    <div class="products__wrap">
+
+      <div class="product product--small js-check">
+        <div class="product__body" tabindex=”0>
+          <div class="product__inner">
+            <div class="product__type">Сказочное заморское яство</div>
+            <h3 class="product__name">Нямушка</h3>
+            <h4 class="product__taste">с фуа-гра</h4>
+            <div class="product__promo">
+              <b>10</b> порций<br />
+              мышь в подарок
+            </div>
+            <div class="product__weight">
+              <div>0,5</div>
+              кг
+            </div>
+          </div>
+
+        </div>
+        <div class="product__header">Чего сидишь? Порадуй котэ, <span class="link js-check">купи.</span></div>
+      </div>
+
+      <div class="product product--medium js-check">
+        <div class="product__body" tabindex=”0>
+          <div class="product__inner">
+            <div class="product__type">Сказочное заморское яство</div>
+            <h3 class="product__name">Нямушка</h3>
+            <h4 class="product__taste">с рыбой</h4>
+            <div class="product__promo">
+              <b>40</b> порций<br />
+              <b>2</b> мыши в подарок
+            </div>
+            <div class="product__weight">
+              <div>2</div>
+              кг
+            </div>
+          </div>
+
+        </div>
+        <div class="product__header">Головы щучьи с ческноком да свежайшая семгушка.</div>
+      </div>
+
+      <div class="product product--large product--out-of-stock js-check">
+        <div class="product__body" tabindex=”0>
+          <div class="product__inner">
+            <div class="product__type">Сказочное заморское яство</div>
+            <h3 class="product__name">Нямушка</h3>
+            <h4 class="product__taste">с курой</h4>
+            <div class="product__promo">
+              <b>100</b> порций<br />
+              <b>5</b> мышей в подарок<br />
+              заказчик доволен
+            </div>
+            <div class="product__weight">
+              <div>5</div>
+              кг
+            </div>
+          </div>
+        </div>
+        <div class="product__header">Печалька, с курой закончился.</div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

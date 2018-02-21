@@ -1,0 +1,19 @@
+*,
+:before,
+:after{
+  box-sizing: border-box;
+}
+
+body {
+  color: #4c4c4c;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+a,
+.link {
+  color: #1698d9;
+  text-decoration: none;
+  border-bottom: 1px dashed #1698D9;
+  cursor: pointer;
+}
