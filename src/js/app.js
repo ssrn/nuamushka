@@ -1,4 +1,4 @@
-const productsOutOfSale = document.querySelectorAll('.product--out-of-stock.js-check');
+const productsOutOfSale = document.querySelectorAll('.product--disabled.js-check');
 
 Array.from(productsOutOfSale).forEach(function(productOutOfSale) {
   productOutOfSale.classList.remove('js-check');
@@ -8,14 +8,16 @@ const productsOnSale = document.querySelectorAll('.product.js-check');
 
 Array.from(productsOnSale).forEach(function(product) {
   product.addEventListener('click', function() {
-    product.classList.toggle('checked');
+    product.classList.toggle('product--checked');
+
+    if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
+      product.classList.remove('product--selected');
+    }
   });
 
   product.addEventListener('mouseleave', function() {
-    if(product.classList.contains('checked') && !product.classList.contains('selected')) {
-      product.classList.add('selected');
-    } else if(!product.classList.contains('checked') && product.classList.contains('selected')) {
-      product.classList.remove('selected');
+    if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
+      product.classList.add('product--selected');
     }
   });
 });
@@ -26,14 +28,16 @@ Array.from(links).forEach(function(link) {
   const product = link.closest('.product');
 
   link.addEventListener('click', function() {
-    product.classList.toggle('checked');
+    product.classList.toggle('product--checked');
+
+    if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
+      product.classList.remove('product--selected');
+    }
   });
 
   link.addEventListener('mouseleave', function() {
-    if(product.classList.contains('checked') && !product.classList.contains('selected')) {
-      product.classList.add('selected');
-    } else if(!product.classList.contains('checked') && product.classList.contains('selected')) {
-      product.classList.remove('selected');
+    if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
+      product.classList.toggle('product--selected');
     }
   });
 });

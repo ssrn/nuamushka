@@ -9,50 +9,81 @@ title: Nyamushka
     <h2 class="products__title">Ты сегодня покормил кота?</h2>
     <div class="products__wrap">
 
-      <div class="product product--small js-check">
+      <div class="product product--available js-check">
         <div class="product__body" tabindex=”0>
           <div class="product__inner">
-            <div class="product__type">Сказочное заморское яство</div>
+            <div class="product__type">
+              <div class="product__type-default">Сказочное заморское яство</div>
+              <div class="product__type-selected-hover">Котэ не одобряет?</div>
+            </div>
             <h3 class="product__name">Нямушка</h3>
             <h4 class="product__taste">с фуа-гра</h4>
             <div class="product__promo">
               <b>10</b> порций<br />
               мышь в подарок
             </div>
+            <div class="product__bg"></div>
             <div class="product__weight">
-              <div>0,5</div>
-              кг
+              <div class="product__weight-value">0,5</div>
+              <div class="product__weight-unit">кг</div>
             </div>
-          </div>
 
+          </div>
         </div>
-        <div class="product__header">Чего сидишь? Порадуй котэ, <span class="link js-check">купи.</span></div>
+        <div class="product__header">
+           <div class="product__header-available">
+               Чего сидишь? Порадуй котэ, <span class="link js-check">купи.</span>
+           </div>
+          <span class="product__header-selected">
+              Печень утки разварная с артишоками.
+            </span>
+          <span class="product__header-disabled">
+              Печалька, с фуа-гра закончился.
+            </span>
+        </div>
       </div>
 
-      <div class="product product--medium js-check">
+      <div class="product product--available js-check">
         <div class="product__body" tabindex=”0>
           <div class="product__inner">
-            <div class="product__type">Сказочное заморское яство</div>
+            <div class="product__type">
+              <div class="product__type-default">Сказочное заморское яство</div>
+              <div class="product__type-selected-hover">Котэ не одобряет?</div>
+            </div>
             <h3 class="product__name">Нямушка</h3>
             <h4 class="product__taste">с рыбой</h4>
             <div class="product__promo">
               <b>40</b> порций<br />
               <b>2</b> мыши в подарок
             </div>
+            <div class="product__bg"></div>
             <div class="product__weight">
-              <div>2</div>
-              кг
+              <div class="product__weight-value">2</div>
+              <div class="product__weight-unit">кг</div>
             </div>
           </div>
-
         </div>
-        <div class="product__header">Головы щучьи с ческноком да свежайшая семгушка.</div>
+
+        <div class="product__header">
+          <div class="product__header-available">
+               Чего сидишь? Порадуй котэ, <span class="link js-check">купи.</span>
+           </div>
+          <div class="product__header-selected">
+            Головы щучьи с ческноком да свежайшая семгушка.
+          </div>
+          <div class="product__header-disabled">
+            Печалька, с рыбой закончился.
+          </div>
+        </div>
       </div>
 
-      <div class="product product--large product--out-of-stock js-check">
+      <div class="product product--disabled js-check">
         <div class="product__body" tabindex=”0>
           <div class="product__inner">
-            <div class="product__type">Сказочное заморское яство</div>
+            <div class="product__type">
+              <div class="product__type-default">Сказочное заморское яство</div>
+              <div class="product__type-selected-hover">Котэ не одобряет?</div>
+            </div>
             <h3 class="product__name">Нямушка</h3>
             <h4 class="product__taste">с курой</h4>
             <div class="product__promo">
@@ -60,13 +91,24 @@ title: Nyamushka
               <b>5</b> мышей в подарок<br />
               заказчик доволен
             </div>
+            <div class="product__bg"></div>
             <div class="product__weight">
-              <div>5</div>
-              кг
+              <div class="product__weight-value">5</div>
+              <div class="product__weight-unit">кг</div>
             </div>
           </div>
         </div>
-        <div class="product__header">Печалька, с курой закончился.</div>
+        <div class="product__header">
+          <div class="product__header-available">
+            Чего сидишь? Порадуй котэ, <span class="link js-check">купи.</span>
+          </div>
+          <div class="product__header-selected">
+            Филе из цыплят с трюфелями в бульоне.
+          </div>
+          <div class="product__header-disabled">
+            Печалька, с курой закончился.
+          </div>
+        </div>
       </div>
     </div>
 </section>
