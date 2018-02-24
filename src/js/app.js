@@ -1,43 +1,27 @@
-const productsOutOfSale = document.querySelectorAll('.product--disabled.js-check');
+var productsAvailable = document.querySelectorAll('.product--available');
 
-Array.from(productsOutOfSale).forEach(function(productOutOfSale) {
-  productOutOfSale.classList.remove('js-check');
-});
+for (var i = 0; i < productsAvailable.length; ++i) {
+  var productCard = productsAvailable[i].querySelectorAll('.product__card');
+  var buyLink = productsAvailable[i].querySelectorAll('.product__buy-link');
 
-const productsOnSale = document.querySelectorAll('.product.js-check');
+  productCard[0].addEventListener('click', handleProductClick);
+  productCard[0].addEventListener('mouseleave', handleProductMouseLeave);
+  buyLink[0].addEventListener('click', handleProductClick);
+}
 
-Array.from(productsOnSale).forEach(function(product) {
-  product.addEventListener('click', function() {
-    product.classList.toggle('product--checked');
+function handleProductClick(evt) {
+  var product = evt.currentTarget.closest('.product--available');
 
-    if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
-      product.classList.remove('product--selected');
-    }
-  });
+  product.classList.toggle('product--checked');
+  if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
+    product.classList.remove('product--selected');
+  }
+}
 
-  product.addEventListener('mouseleave', function() {
-    if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
-      product.classList.add('product--selected');
-    }
-  });
-});
+function handleProductMouseLeave(evt) {
+  var product = evt.currentTarget.closest('.product--available');
 
-const links = document.querySelectorAll('.product.js-check .link');
-
-Array.from(links).forEach(function(link) {
-  const product = link.closest('.product');
-
-  link.addEventListener('click', function() {
-    product.classList.toggle('product--checked');
-
-    if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
-      product.classList.remove('product--selected');
-    }
-  });
-
-  link.addEventListener('mouseleave', function() {
-    if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
-      product.classList.toggle('product--selected');
-    }
-  });
-});
+  if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
+    product.classList.add('product--selected');
+  }
+}
