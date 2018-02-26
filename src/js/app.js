@@ -9,8 +9,13 @@ for (var i = 0; i < productsAvailable.length; ++i) {
   buyLink[0].addEventListener('click', handleProductClick);
 }
 
+function findClosest(el, cls) {
+  while ((el = el.parentElement) && !el.classList.contains(cls));
+  return el;
+}
+
 function handleProductClick(evt) {
-  var product = evt.currentTarget.closest('.product--available');
+  var product = findClosest(evt.currentTarget, 'product--available');
 
   product.classList.toggle('product--checked');
   if(!product.classList.contains('product--checked') && product.classList.contains('product--selected')) {
@@ -19,7 +24,7 @@ function handleProductClick(evt) {
 }
 
 function handleProductMouseLeave(evt) {
-  var product = evt.currentTarget.closest('.product--available');
+  var product = findClosest(evt.currentTarget, 'product--available');
 
   if(product.classList.contains('product--checked') && !product.classList.contains('product--selected')) {
     product.classList.add('product--selected');
