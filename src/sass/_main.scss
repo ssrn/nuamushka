@@ -43,6 +43,7 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   display: inline-block;
   max-width: 320px;
   margin-bottom: 40px;
+  outline: none;
 
   &--available {
     &:hover {
@@ -156,6 +157,7 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   height: 480px;
   border-radius: 12px;
   background-image: linear-gradient(135deg, transparent 30px, #1698d9 30px);
+  outline: none;
 }
 
 .product__inner {
