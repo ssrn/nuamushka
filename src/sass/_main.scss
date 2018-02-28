@@ -145,6 +145,8 @@
   border-radius: 12px;
   outline: none;
   @include product-card-gradient(30px, color(blue));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .product__inner {
