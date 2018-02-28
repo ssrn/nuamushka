@@ -1,4 +1,19 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+** Colors
+*/
+
+$color-stack:
+        (group: blue, id: normal, color: #1698d9),
+        (group: blue, id: light, color: #2ea8e6),
+
+        (group: pink, id: normal, color: #d91667),
+        (group: pink, id: light, color: #e62e7a),
+
+        (group: gray, id: normal, color: #b3b3b3),
+        (group: gray, id: dark, color: #4c4c4c);
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 ** Breakpoints
 */
 
@@ -21,3 +36,10 @@ $media-stack:
 
   (group: retina, id: general, rule: "only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"),
   (group: print, id: general, rule: "only print");
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+** Fonts
+*/
+
+$font-exo: 'Exo2.0 Thin', sans-serif;

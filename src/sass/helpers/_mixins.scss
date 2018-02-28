@@ -9,29 +9,27 @@
 }
 
 
-// Convert pixels to ems
-@function em($pxval, $base: 16px) {
-  @if not unitless($pxval) {
-    $pxval: strip-units($pxval);
-  }
-  @if not unitless($base) {
-    $base: strip-units($base);
-  }
-  @return ($pxval / $base) * 1em;
+@mixin product-card-gradient($from, $color) {
+  background-image: linear-gradient(135deg, transparent $from, $color 30px);
 }
 
 
-// Convert pixels to rems
-@function rem($pxval) {
-  @if not unitless($pxval) {
-    $pxval: strip-units($pxval);
-  }
+/// Usage:
+/// Use vars from $color-stack.
+/// a {
+///   color: color(base);
+///   background: color(base, hover);
+///   border-color: color(orange, hover, 0.4);
+/// }
 
-  $base: $em-base;
-  @if not unitless($base) {
-    $base: strip-units($base);
+@function color($group, $shade: normal, $transparency:1) {
+  @each $color in $color-stack {
+    $c-group: map-get($color, group);
+    $c-shade: map-get($color, id);
+    @if($group == map-get($color, group) and $shade == map-get($color, id)) {
+      @return rgba(map-get($color, color), $transparency);
+    }
   }
-  @return ($pxval / $base) * 1rem;
 }
 
 

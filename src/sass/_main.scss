@@ -1,16 +1,3 @@
-@font-face {
-  font-family: 'Exo2.0 Thin';
-  src: url(../fonts/Exo2.0-Thin.otf);
-}
-
-body {
-  position: relative;
-  font-family: 'Trebuchet MS', sans-serif;
-  background: #000 url(../img/bg.jpg) repeat 0 0;
-}
-
-$font-stack: 'Exo2.0 Thin', sans-serif;
-
 .page__main {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +18,7 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
 }
 
 .products__title {
-  font-family: $font-stack;
+  font-family: $font-exo;
   margin-bottom: 22px;
   color: #fff;
   font-size: 36px;
@@ -48,16 +35,16 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   &--available {
     &:hover {
       .product__card {
-        background-image: linear-gradient(135deg, transparent 30px, #2ea8e6 30px);
+        @include product-card-gradient(30px, color(blue, light));
       }
 
       .product__weight {
-        background-color: #2ea8e6;
+        background-color: color(blue, light);
       }
 
       .product__buy-link {
-        color: #2ea8e6;
-        border-bottom: 1px dashed #2ea8e6;
+        color: color(blue, light);
+        border-bottom: 1px dashed color(blue, light);
       }
     }
 
@@ -68,11 +55,11 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
 
   &.product--checked {
     .product__card {
-      background-image: linear-gradient(135deg, transparent 30px, #d91667 30px);
+      @include product-card-gradient(30px, color(pink));
     }
 
     .product__weight {
-      background-color: #d91667;
+      background-color: color(pink);
     }
 
     .product__header-available {
@@ -94,11 +81,11 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
         }
 
         .product__card {
-          background-image: linear-gradient(135deg, transparent 30px, #e62e7a 30px);
+          @include product-card-gradient(30px, color(pink, light));
         }
 
         .product__weight {
-          background-color: #e62e7a;
+          background-color: color(pink, light);
         }
       }
     }
@@ -106,20 +93,20 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
 
   &--disabled {
     .product__card {
-      background-image: linear-gradient(135deg, transparent 30px, #b3b3b3 30px);
+      @include product-card-gradient(30px, color(gray));
     }
 
     .product__inner {
-      color: #b3b3b3;
-      background: linear-gradient(135deg, transparent 28px, #f2f2f2 30px);
+      color: color(gray);
+      @include product-card-gradient(28px, #f2f2f2);
     }
 
     .product__name {
-      color: #b3b3b3;
+      color: color(gray);
     }
 
     .product__taste {
-      color: #b3b3b3;
+      color: color(gray);
     }
 
     .product__bg {
@@ -127,7 +114,7 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
     }
 
     .product__weight {
-      background-color: #b3b3b3;
+      background-color: color(gray);
     }
 
     .product__header-available {
@@ -156,8 +143,8 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   width: 320px;
   height: 480px;
   border-radius: 12px;
-  background-image: linear-gradient(135deg, transparent 30px, #1698d9 30px);
   outline: none;
+  @include product-card-gradient(30px, color(blue));
 }
 
 .product__inner {
@@ -166,25 +153,25 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   left: 4px;
   width: 312px;
   height: 472px;
-  padding: 17px 60px 20px 45px;
+  padding: 18px 60px 20px 45px;
   color: #666;
   text-align: left;
   border-radius: 12px;
-  background: linear-gradient(135deg, transparent 28px, #ffffff 30px);
+  @include product-card-gradient(28px, #fff);
 }
 
 .product__type {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 16px;
 }
 
 .product__type-selected-hover {
   display: none;
-  color: #e62e7a;
+  color: color(pink, light);
 }
 
 .product__name {
-  margin: 0;
+  margin: 0 0 0 -2px;
   color: #000;
   font-size: 48px;
   font-weight: bold;
@@ -199,7 +186,7 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
 }
 
 .product__promo {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 14px;
 }
 
@@ -209,20 +196,20 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
   bottom: 0;
   width: 319px;
   height: 272px;
-  background: url(../img/cat.png) no-repeat 0 3px;
+  background: url(../img/cat.png) no-repeat -4px 4px;
   border-radius: 12px;
 }
 
 .product__weight {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  bottom: 11px;
+  right: 11px;
   height: 80px;
   width: 80px;
-  color: #ffffff;
+  color: #fff;
   font-size: 21px;
   text-align: center;
-  background-color: #1698d9;
+  background-color: color(blue);
   border-radius: 50%;
 }
 
@@ -234,15 +221,15 @@ $font-stack: 'Exo2.0 Thin', sans-serif;
 
 .product__header {
   margin-top: 14px;
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   text-align: center;
 }
 
 .product__buy-link {
-  color: #1698d9;
+  color: color(blue);
   text-decoration: none;
-  border-bottom: 1px dashed #1698d9;
+  border-bottom: 1px dashed color(blue);
   cursor: pointer;
 }
 
