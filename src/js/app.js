@@ -1,12 +1,12 @@
 var productsAvailable = document.querySelectorAll('.product--available');
 
-for (var i = 0; i < productsAvailable.length; ++i) {
-  var productCard = productsAvailable[i].querySelectorAll('.product__card');
+for (var i = 0; i < productsAvailable.length; i++) {
+  var productCard = productsAvailable[i].querySelector('.product__card');
   var buyLink = productsAvailable[i].querySelectorAll('.product__buy-link');
 
-  productCard[0].addEventListener('click', handleProductClick);
-  productCard[0].addEventListener('mouseleave', handleProductMouseLeave);
-  buyLink[0].addEventListener('click', handleProductClick);
+  productCard.addEventListener('click', handleProductClick);
+  productCard.addEventListener('mouseleave', handleProductMouseLeave);
+  buyLink.addEventListener('click', handleProductClick);
 }
 
 function findClosest(el, cls) {
