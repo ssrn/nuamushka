@@ -1,13 +1,11 @@
-var productsAvailable = document.querySelectorAll('.product--available');
-
-for (var i = 0; i < productsAvailable.length; i++) {
-  var productCard = productsAvailable[i].querySelector('.product__card');
-  var buyLink = productsAvailable[i].querySelectorAll('.product__buy-link');
+Array.prototype.forEach.call(document.querySelectorAll('.product--available'), function(product) {
+  var productCard = product.querySelector('.product__card');
+  var buyLink = product.querySelectorAll('.product__buy-link');
 
   productCard.addEventListener('click', handleProductClick);
   productCard.addEventListener('mouseleave', handleProductMouseLeave);
   buyLink.addEventListener('click', handleProductClick);
-}
+});
 
 function findClosest(el, cls) {
   while ((el = el.parentElement) && !el.classList.contains(cls));
